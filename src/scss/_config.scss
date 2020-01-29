@@ -1,0 +1,46 @@
+$primary--dk: hsl(256, 26%, 20%);
+$primary--lt: hsl(216, 30%, 68%);
+
+$secondary--dk: hsl(270, 9%, 17%);
+$secondary--md: hsl(273, 4%, 51%);
+$secondary--lt: hsl(0, 0%, 98%);
+
+$serif: 'DM Serif Display', serif;
+$sans-serif: 'Karla', sans-serif;
+
+$font-weight:(
+    "medium": 400,
+    "bold": 700,
+);
+
+@function weight($weightname){
+    @return map-get($font-weight, $weightname );
+};
+
+@mixin transition-ease {
+    transition: all 0.3s ease-in-out;
+}
+
+@mixin media-sm {
+    @media screen and (max-width: 768px) {
+        @content; 
+    }
+}
+
+@mixin media-md {
+    @media screen and (min-width: 768px) {
+        @content; 
+    }
+}
+
+@mixin media-lg {
+    @media screen and (min-width: 1024px) {
+        @content; 
+    }
+}
+
+@mixin media-xl {
+    @media screen and (min-width: 1600px) {
+        @content; 
+    }
+}

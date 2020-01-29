@@ -1,0 +1,127 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__controls {
+        padding: 1rem 1rem;
+        background: $secondary--lt;
+        flex: 1 1 100%;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        z-index: 5;
+
+        &__hamburger {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            
+            i {
+                width: 40px;
+                height: 40px;
+                background: url('../images/icon-hamburger.svg') 0 0 no-repeat;
+            }
+        }
+
+        .logo__wrap {
+            flex: 1;
+            display: flex;
+            justify-content: flex-start;
+        }
+    }
+
+    &__content {
+        position: absolute;
+        top: 10vh;
+        flex: 1 1 100%;
+        display: flex;
+        transform: translateX(100%);
+        justify-content: center;
+        color: $secondary--lt;
+        align-items: flex-start;
+        width: 100vw;
+        height: 100vh;
+        background: $primary--dk;
+        @include transition-ease;
+       
+        ul {
+            margin-top: 10vh;
+            width: 100vw;
+            height: 35vh;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-between;
+
+            list-style: none;
+
+            li {
+                flex: 1 1 100%;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                margin: 0 2rem;
+
+                a {
+                    font-size: 1rem;
+                    color: $secondary--lt;
+                    text-transform: uppercase;
+
+                    &:active, &:focus, &:hover {
+                        color: $secondary--md;
+                    }
+                }
+
+                button {
+                    flex: 1;
+                    border: 3px solid $secondary--lt;
+                    background: none;
+                    padding: 1rem;
+                    @include transition-ease;
+
+                    a {
+                        font-size: 1rem;
+                    }
+
+                    &:active, &:hover, &:focus {
+                        background: $secondary--lt;
+                        
+                        a {
+                            color: $primary--dk;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 30%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+}
+
+.open {
+    .navbar__controls {
+        top: 0;
+        &__hamburger {
+            i {
+                background: url('../images/icon-close.svg') 0 0 no-repeat;
+                cursor: pointer;
+            }
+        }
+    }
+    
+    .navbar__content {
+        transform: translateY(0);
+        z-index: 3;
+    }
+    
+}
