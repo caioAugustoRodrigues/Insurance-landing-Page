@@ -1,7 +1,7 @@
 .cards {
-    display: grid;
+    display: flex;
     text-align: center;
-    justify-items: center;
+    flex-direction: column;
     margin-top: 150px;
     padding: 1rem;
 
@@ -16,7 +16,24 @@
 
     &__wrap {
         .card {
-            margin: 1rem 0;
+            display: grid;
+            justify-items: center;
+            margin: 2rem 0;
+            
+            img {
+                margin: 1rem 0;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+                font-family: $serif;
+                color: $secondary--dk;
+                margin: 1rem 0;
+            }
+
+            p {
+                color: $secondary--md;
+            }
         }
     }
 }
