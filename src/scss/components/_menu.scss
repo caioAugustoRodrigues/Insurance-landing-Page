@@ -130,10 +130,8 @@
 
 @include media-md {
     .navbar {
-        align-items: center;
-        height: 55rem;
         &__controls {
-            justify-content: flex-start;
+            flex: 1;
             &__hamburger {
                 display: none;
             }
@@ -147,7 +145,10 @@
             transform: translateX(0);
             padding: 0;
             flex: 1;
-            position: unset;
+            position: absolute;
+            top: calc(50% - 1.5rem);
+            right: 0;
+            width: 50vw;
             height: 3rem;
             z-index: 25;
             align-items: center;
@@ -155,6 +156,9 @@
 
             ul {
                 margin-top: 0;
+                margin-right: 3rem;
+                width: 70vw;
+                justify-self: flex-end;
                 height: 3rem;
                 align-items: center;
                 flex-wrap: nowrap;
@@ -165,12 +169,59 @@
 
                     a {
                         color: $secondary--md;
+                        @include transition-ease;
+
+                        &:active, &:focus, &:hover {
+                            color: $secondary--dk;
+                        }
+                    }
+
+                    button {
+                        border: 3px solid $secondary--dk;
+                        text-align: center;
+                        display: block;
+                        justify-content: center;
+                        flex-wrap: wrap;
+                        padding: .5rem;
+                        min-width: 125px;
+
+                        a {
+                            display: inline;
+                            font-size: .8rem;
+                            font-weight: weight(bold);
+                            color: $secondary--dk;
+                        }
+
+                        &:active, &:focus, &:hover {
+                            background: $secondary--dk;
+                            cursor: pointer;
+
+                            a {
+                                color: $secondary--md;
+                            }
+                        }
                     }
 
                     img {
                         display: none;
                     }
                 }
+            }
+        }
+    }
+}
+
+@include media-lg {
+    .navbar {
+        &__controls {
+            .logo__wrap {
+                margin-left: 9rem;
+            }
+        }
+
+        &__content {
+            ul {
+                margin-right: 9rem;
             }
         }
     }
