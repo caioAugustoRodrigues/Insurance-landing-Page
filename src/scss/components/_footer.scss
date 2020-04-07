@@ -1,0 +1,51 @@
+.footer {
+    
+    &__social {
+        background: url('../images/bg-pattern-footer-mobile.svg') 0 0 no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-flow: column;
+        padding: 3rem 0;
+        align-items: center;
+
+        &__icons {
+            margin-top: 2rem;
+            display: flex;
+            width: 50%;
+            justify-content: space-evenly;
+        }
+    }
+
+    &__links {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+        margin: 3rem 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid $secondary--md;
+
+        &__list {
+            text-transform: uppercase;
+            letter-spacing: .1rem;
+            font-size: .8rem;
+
+            h1 {
+                margin: 2rem 0;
+                margin-bottom: 3rem;
+                font-weight: weight(bold);
+                font-family: $sans-serif;
+                color: $secondary--md;
+            }
+
+            li {
+                margin: 1rem;
+
+                a {
+                    color: $primary--dk;
+                    font-weight: weight(bold);
+                }
+            }
+        }
+    }
+}

@@ -38,14 +38,13 @@
 
     &__content {
         position: absolute;
-        top: 10vh;
+        top: 9vh;
         flex: 1 1 100%;
         display: flex;
         transform: translateX(100%);
         justify-content: center;
         color: $secondary--lt;
         align-items: flex-start;
-        width: 100vw;
         height: 100vh;
         padding-bottom: 5vh;
         background: $primary--dk;
@@ -58,7 +57,6 @@
             display: flex;
             flex-wrap: wrap;
             align-content: space-between;
-
             list-style: none;
 
             li {
@@ -130,42 +128,50 @@
 
 @include media-md {
     .navbar {
+        /*&__controls {
+            &__hamburger {
+                justify-content: flex-end;
+                margin-right: 4.5rem;
+            }
+        }*/
+        align-items: center;
+        flex-wrap: nowrap;
+        background: $secondary--lt;
+
         &__controls {
             flex: 1;
-            &__hamburger {
+            &__hamburger { 
                 display: none;
             }
 
             .logo__wrap {
+                position: relative;
                 margin-left: 3rem;
             }
         }
 
         &__content {
+            flex: 3;
             transform: translateX(0);
             padding: 0;
-            flex: 1;
-            position: absolute;
-            top: calc(50% - 1.5rem);
-            right: 0;
-            width: 50vw;
+            padding-right: 4rem;
+            padding-left: 4rem;
+            position: unset;
+            background: none;
             height: 3rem;
             z-index: 25;
-            align-items: center;
-            background: none;
 
             ul {
+                flex: 1 1 100%;
                 margin-top: 0;
-                margin-right: 3rem;
-                width: 70vw;
-                justify-self: flex-end;
                 height: 3rem;
+                width: unset;
                 align-items: center;
                 flex-wrap: nowrap;
-                justify-content: center;
 
                 li {
                     flex: 1;
+                    margin: 0;
 
                     a {
                         color: $secondary--md;
@@ -182,8 +188,8 @@
                         display: block;
                         justify-content: center;
                         flex-wrap: wrap;
-                        padding: .5rem;
-                        min-width: 125px;
+                        padding: .350rem;
+                        min-width: 100px;
 
                         a {
                             display: inline;
@@ -197,7 +203,7 @@
                             cursor: pointer;
 
                             a {
-                                color: $secondary--md;
+                                color: $secondary--lt;
                             }
                         }
                     }
@@ -205,6 +211,12 @@
                     img {
                         display: none;
                     }
+                }
+
+                .bg-pattern {
+                    display: none;
+                    position: absolute;
+                    right: -100px;
                 }
             }
         }
@@ -220,8 +232,13 @@
         }
 
         &__content {
+            justify-content: flex-end;
+            padding: 0;
             ul {
-                margin-right: 9rem;
+                margin-right: 11rem;
+                flex: unset;
+                width: 500px;
+                justify-content: space-evenly;
             }
         }
     }

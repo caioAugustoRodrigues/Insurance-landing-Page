@@ -1,0 +1,79 @@
+.banner {
+    position: relative;
+    margin: 3rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 2rem;
+    background: $primary--dk;
+    text-align: center;
+    overflow: hidden;
+
+    h1 {
+        flex: 1 1 100%;
+        color: $secondary--lt;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        line-height: 2rem;
+        z-index: 2;
+    }
+
+    .button {
+        a {
+            background: none;
+            color: $secondary--lt;
+            border: 2px solid $secondary--lt;
+            padding: .5rem 1rem;
+            text-transform: uppercase;
+            font-size: .8rem;
+            z-index: 2;
+            @include transition-ease;
+    
+            &:active, &:focus, &:hover {
+                background: $secondary--lt;
+                color: $primary--dk;
+            }
+        }
+    }
+
+    .img {
+        position: absolute;
+        background: url('../images/bg-pattern-how-we-work-mobile.svg') 0 0 no-repeat;
+        background-size: cover;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        display: block;
+        height: 200px;
+        width: 100px;
+    }
+}
+
+@include media-md {
+    .banner {
+        justify-content: flex-start;
+        margin: 0 4rem;
+        margin-top: -3rem;
+        padding: 4rem;
+
+        h1 {
+            flex: 1;
+            text-align: left;
+            margin-bottom: 0;
+            padding-right: 10rem;
+        }
+
+        .button {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}
+
+@include media-lg {
+    .banner {
+        margin: 0 10rem;
+    }
+}

@@ -43,11 +43,22 @@
 @include media-md {
     .cards {
         text-align: left;
-        margin: 250px 3rem;
+        margin: 150px 3rem;
+
+        h1 {
+            font-size: 3rem;
+        }
 
         &__wrap {
             grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
+            gap: 3rem;
         }
+    }
+}
+
+@include media-lg {
+    .cards {
+        margin-top: 250px;
+        padding: 0 7rem;
     }
 }
