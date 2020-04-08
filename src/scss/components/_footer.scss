@@ -49,3 +49,82 @@
         }
     }
 }
+
+@include media-md {
+    .footer {
+        position: relative;
+        bottom: 0;
+        margin-top: 9rem;
+        padding: 2rem 4rem;
+        background: hsl(0, 0%, 97%);
+        
+        &__bg {
+            background-image: url('../images/bg-pattern-footer-mobile.svg') 0 0 no-repeat;
+            background-size: cover;
+            display: block;
+            height: 250px;
+            width: 500px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 55;
+        }
+
+        &__social {
+            background: none;
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: space-evenly;
+            border-bottom: 1px solid $secondary--md;
+            padding: 2rem 0;
+
+            .logo {
+                flex: 5;
+            }
+
+            &__icons {
+                flex: 1;
+                margin: 0;
+                justify-content: space-between;
+            }
+        }
+
+        &__links {
+            display: flex;
+            justify-content: space-between;
+            border-top: none;
+            margin: 0 1rem;
+            
+            &__list {
+                text-align: left;
+                list-style: none;
+                border-top: none;
+                margin: 0 -1rem;
+
+                h1 {
+                    margin: 2rem 0;
+                }
+
+                li {
+                    margin: 1rem 0;
+                }
+            }
+        }
+    }
+}
+
+@include media-lg {
+    .footer {
+        padding: 2rem 10rem;
+    }
+}
+
+@include media-xl {
+    .footer {
+        &__social {
+            .logo {
+                flex: 7;
+            }
+        }
+    }
+}

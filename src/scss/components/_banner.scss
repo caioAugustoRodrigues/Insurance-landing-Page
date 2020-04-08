@@ -33,6 +33,7 @@
             &:active, &:focus, &:hover {
                 background: $secondary--lt;
                 color: $primary--dk;
+                cursor: pointer;
             }
         }
     }
@@ -61,7 +62,6 @@
             flex: 1;
             text-align: left;
             margin-bottom: 0;
-            padding-right: 10rem;
         }
 
         .button {
@@ -69,11 +69,34 @@
             display: flex;
             justify-content: flex-end;
         }
+
+        .img {
+            background: url('../images/bg-pattern-how-we-work-desktop.svg') 0 0 no-repeat;
+            background-size: cover;
+            width: 410px;
+            height: 225px;
+        }
     }
 }
 
 @include media-lg {
     .banner {
         margin: 0 10rem;
+    }
+}
+
+@include media-xl {
+    .banner {
+        padding: 5rem;
+
+        h1 {
+            padding-right: 35rem;
+        }
+
+        .button {
+            a {
+                padding: .5rem 2rem;
+            }
+        }
     }
 }
