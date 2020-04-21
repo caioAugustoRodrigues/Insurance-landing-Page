@@ -13,6 +13,20 @@
             display: flex;
             width: 50%;
             justify-content: space-evenly;
+
+            &__icon {
+                path {
+                    @include transition-ease;
+                }
+
+                &:active, &:focus, &:hover {
+                    cursor: pointer;
+
+                    path {
+                        fill: $secondary--dk;
+                    }
+                }
+            }
         }
     }
 
@@ -44,7 +58,12 @@
                 a {
                     color: $primary--dk;
                     font-weight: weight(bold);
+                    @include transition-ease;
+                    &:hover {
+                        border-bottom: 1px solid $primary--dk;
+                    }
                 }
+
             }
         }
     }
@@ -59,15 +78,15 @@
         background: hsl(0, 0%, 97%);
         
         &__bg {
-            background-image: url('../images/bg-pattern-footer-mobile.svg') 0 0 no-repeat;
+            background: url('../images/bg-pattern-footer-desktop.svg') 0 0 no-repeat;
             background-size: cover;
             display: block;
-            height: 250px;
-            width: 500px;
+            height: 275px;
+            width: 630px;
             position: absolute;
             top: 0;
             left: 0;
-            z-index: 55;
+            z-index: 0;
         }
 
         &__social {
@@ -77,6 +96,7 @@
             justify-content: space-evenly;
             border-bottom: 1px solid $secondary--md;
             padding: 2rem 0;
+            position: relative;
 
             .logo {
                 flex: 5;
@@ -94,6 +114,9 @@
             justify-content: space-between;
             border-top: none;
             margin: 0 1rem;
+            padding-right: 6rem;
+            z-index: 5;
+            position: relative;
             
             &__list {
                 text-align: left;
@@ -125,6 +148,10 @@
             .logo {
                 flex: 7;
             }
+        }
+
+        &__links {
+            padding-right: 9rem;
         }
     }
 }

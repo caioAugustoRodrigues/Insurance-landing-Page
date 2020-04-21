@@ -38,7 +38,7 @@
 
     &__content {
         position: absolute;
-        top: 9vh;
+        top: 5vh;
         flex: 1 1 100%;
         display: flex;
         transform: translateX(100%);
@@ -48,10 +48,11 @@
         height: 100vh;
         padding-bottom: 5vh;
         background: $primary--dk;
+        overflow: hidden;
         @include transition-ease;
        
         ul {
-            margin-top: 10vh;
+            margin-top: 10rem;
             width: 100vw;
             height: 40vh;
             display: flex;
@@ -175,6 +176,7 @@
 
                     a {
                         color: $secondary--md;
+                        font-weight: weight(bold);
                         @include transition-ease;
 
                         &:active, &:focus, &:hover {
@@ -239,6 +241,27 @@
                 flex: unset;
                 width: 500px;
                 justify-content: space-evenly;
+
+                li {
+                    button {
+                        padding: .5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media-xl {
+    .navbar {
+        &__content {
+            ul {
+                width: 600px;
+                li {
+                    button {
+                        min-width: 135px;
+                    }
+                }
             }
         }
     }

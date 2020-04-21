@@ -6,7 +6,6 @@
     background: $primary--dk;
     
     &__banner {
-        z-index: 4;
         display: flex;
         
         span {
@@ -29,7 +28,6 @@
         text-align: center;
 
         &__content {
-            z-index: 2;
 
             h1 {
                 flex: 1 1 100%;
@@ -48,22 +46,25 @@
                 line-height: 1.5rem;
                 color: $secondary--lt;
             }
-        }
 
-        button { 
-            margin-top: 3rem;
-            padding: .5rem 2rem;
-            background: none;
-            border: 2px solid $secondary--lt;
-            color: $secondary--lt;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            font-family: $sans-serif;
-            @include transition-ease;
-
-            &:active, &:hover, &:focus {
-                background: $secondary--lt;
-                color: $secondary--dk;
+            &__button {
+                margin-top: 3rem;
+                padding: .5rem 2rem;
+                background: none;
+                border: 2px solid $secondary--lt;
+                color: $secondary--lt;
+                font-size: 1rem;
+                text-transform: uppercase;
+                font-family: $sans-serif;
+                font-weight: weight(bold);
+                
+                @include transition-ease;
+    
+                &:active, &:hover, &:focus {
+                    background: $secondary--lt;
+                    color: $secondary--dk;
+                    cursor: pointer;
+                }
             }
         }
     }
@@ -124,9 +125,9 @@
             margin-right: 1rem;
             flex: 1;
             padding: 0;
+            z-index: 35; 
 
             &__content {
-                
                 h1 {
                     font-size: 2rem;
                     line-height: 1.7rem;
@@ -137,7 +138,6 @@
         .intro {
             position: absolute;
             top: 0;
-            z-index: 5;
             &__left {
                 top: 300px;
                 left: 0;
